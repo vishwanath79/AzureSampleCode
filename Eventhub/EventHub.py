@@ -3,11 +3,13 @@ import datetime
 
 import random
 import json
-
+import ehubconfig
 from azure.servicebus import ServiceBusService
 
-sbs = ServiceBusService(service_namespace='vsehub', shared_access_key_name='RootManageSharedAccessKey', shared_access_key_value='')
+sbs = ServiceBusService(service_namespace=ehubconfig.service_namespace, shared_access_key_name=ehubconfig.shared_access_key_name,shared_access_key_value=ehubconfig.shared_access_key_value)
 devices = []
+
+
 
 for x in range(0,10):
     devices.append(str(uuid.uuid4()))
