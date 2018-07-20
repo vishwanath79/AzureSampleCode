@@ -19,7 +19,6 @@ for y in range(0,20):
     for dev in devices:
         reading = {'id': dev, 'timestamp': str(datetime.datetime.utcnow()),'uv': random.random(), 'temperature':random.randint(70,100),'humidity':random.randint(70,100)}
         s = json.dumps(reading)
-        print(s)
         sbs.send_event('vsehubtemp',s)
     print(y)
 
